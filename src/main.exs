@@ -33,8 +33,20 @@ users = [
 
 IO.puts users[:john].age
 
-#update a user
+#update a userx	
 users = put_in users[:john].age, 31
 
 IO.puts users[:john].age
 
+Test.print( "teste" )
+
+Test.count(20)
+
+sum = Test.sum_list( [ 1,2,3,4] , 0)
+
+IO.puts sum
+
+Enum.map([1,2,3,4], fn h -> h + 1 end)
+
+a = Enum.reduce([1,2,3,4,5,6], fn x, y -> x + y end)
+IO.puts a
