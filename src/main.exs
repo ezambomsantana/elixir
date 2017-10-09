@@ -50,3 +50,23 @@ Enum.map([1,2,3,4], fn h -> h + 1 end)
 
 a = Enum.reduce([1,2,3,4,5,6], fn x, y -> x + y end)
 IO.puts a
+
+
+pidSelf = self
+
+pid = spawn fn -> send(pidSelf, {:hello, self()}) end
+# spaw_link, link the two process
+
+receive do
+   { :hello , message } -> IO.inspect message
+   1_000 -> "nothing after 1s"
+end
+
+file = "/home/eduardo/dev/elixir/src/main.exs"
+case File.read(file) do
+  {:ok, body}      -> IO.puts body # do something with the `body`
+  {:error, reason} -> IO.puts reason # handle the error caused by `reason`
+end
+
+
+
