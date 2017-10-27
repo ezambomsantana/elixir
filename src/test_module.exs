@@ -1,5 +1,8 @@
 defmodule Test do
+
+   @teste "teste 123"
    def print(x) do
+      IO.puts @teste
       IO.puts x
    end
 

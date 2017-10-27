@@ -62,6 +62,7 @@ receive do
    1_000 -> "nothing after 1s"
 end
 
+
 file = "/home/eduardo/dev/elixir/src/main.exs"
 case File.read(file) do
   {:ok, body}      -> IO.puts body # do something with the `body`
